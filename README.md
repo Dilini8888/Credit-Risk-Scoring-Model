@@ -27,6 +27,18 @@ The dataset file is not included in this repository.
 - Balanced Logistic Regression
 - Random Forest Classifier
 
+
+## Model Performance Comparison
+
+| Model | Accuracy | Class 1 Recall | Class 1 F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 81.03% | 26.00% | 37.00% | 0.71722 |
+| Balanced Logistic Regression | 68.52% | 63.86% | 47.37% | 0.71763 |
+| Random Forest (100 trees) | 79.25% | 49.44% | 51.39% | 0.75690 |
+| Random Forest (200 trees) | 79.62% | 49.74% | 51.98% | 0.76324 |
+| Tuned Random Forest | 77.02% | 60.18% | 53.74% | 0.77335 |
+
+**Note:** Class 1 represents clients who default on their payments. Accuracy alone is not sufficient for evaluating credit risk models, so Recall, F1-score, and ROC-AUC are also considered.
 ## Current Best Model
 **Random Forest Classifier**
 
