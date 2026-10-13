@@ -67,6 +67,9 @@ These results are from the current experimental train-test split and may vary if
 
 ![Random Forest ROC Curve](roc_curve.png)
 
+### 3. Random Forest Feature Importance
+
+![Random Forest Feature Importance](feature_importance.png)
 
 ## Project Status
 Ongoing — model evaluation and improvement are in progress.
