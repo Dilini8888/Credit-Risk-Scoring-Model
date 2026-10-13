@@ -57,8 +57,19 @@ These results are from the current experimental train-test split and may vary if
 4. Run:
    `python credit_risk_model.py`
 
+## Model Evaluation Visualizations
+
+### 1. Random Forest Confusion Matrix
+
+![Random Forest Confusion Matrix](confusion_matrix.png)
+
+### 2. Random Forest ROC Curve
+
+![Random Forest ROC Curve](roc_curve.png)
+
+
 ## Project Status
-Ongoing — model evaluation and improvement are in progress.
+Ongoing â€” model evaluation and improvement are in progress.
 
 ## Author
 Dilini Dissanayake
