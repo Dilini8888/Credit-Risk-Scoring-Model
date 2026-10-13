@@ -210,3 +210,31 @@ plt.tight_layout()
 
 plt.savefig("roc_curve.png", dpi=300)
 plt.show()
+
+
+
+# Feature Importance for Random Forest
+
+feature_importance = pd.DataFrame({
+    "Feature": X_train.columns,
+    "Importance": rf_model.feature_importances_
+})
+
+feature_importance = feature_importance.sort_values(
+    by="Importance", ascending=False
+)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(
+    data=feature_importance.head(10),
+    x="Importance",
+    y="Feature"
+)
+
+plt.title("Top 10 Important Features - Random Forest")
+plt.xlabel("Importance Score")
+plt.ylabel("Feature")
+plt.tight_layout()
+
+plt.savefig("feature_importance.png", dpi=300)
+plt.show()
