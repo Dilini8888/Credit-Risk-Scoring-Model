@@ -2,7 +2,19 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score
+
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    roc_auc_score,
+    roc_curve
+)
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
 # Load the credit risk dataset
 data = pd.read_excel("default of credit card clients.xls", header=1)
 # Display the first 5 rows
@@ -155,9 +167,46 @@ print("Random Forest ROC-AUC:", rf_auc)
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
-#Confusion Matrix
 
-cm = confusion_matrix(y_test, y_pred)
+# Confusion Matrix for Random Forest
 
-print("\nConfusion Matrix:")
+cm = confusion_matrix(y_test, rf_y_pred)
+
+print("\nRandom Forest Confusion Matrix:")
 print(cm)
+
+
+
+# Plot Confusion Matrix for Random Forest
+
+plt.figure(figsize=(6, 4))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues",
+            xticklabels=["No Default", "Default"],
+            yticklabels=["No Default", "Default"])
+
+plt.title("Random Forest Confusion Matrix")
+plt.xlabel("Predicted Label")
+plt.ylabel("Actual Label")
+plt.tight_layout()
+
+plt.savefig("confusion_matrix.png", dpi=300)
+plt.show()
+
+
+
+# Plot ROC Curve for Random Forest
+
+fpr, tpr, thresholds = roc_curve(y_test, rf_y_prob)
+
+plt.figure(figsize=(6, 4))
+plt.plot(fpr, tpr, label=f"Random Forest (AUC = {rf_auc:.3f})")
+plt.plot([0, 1], [0, 1], linestyle="--", label="Random Guess")
+
+plt.title("Random Forest ROC Curve")
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.legend(loc="lower right")
+plt.tight_layout()
+
+plt.savefig("roc_curve.png", dpi=300)
+plt.show()
