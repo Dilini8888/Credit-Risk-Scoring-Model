@@ -167,6 +167,8 @@ print("Random Forest ROC-AUC:", rf_auc)
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
+print("\nRandom Forest Classification Report:")
+print(classification_report(y_test, rf_y_pred))
 
 # Confusion Matrix for Random Forest
 
