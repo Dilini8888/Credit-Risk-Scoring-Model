@@ -43,6 +43,19 @@ PROJECT STATUS
 --------------
 Ongoing - model evaluation and improvement are in progress.
 
+RANDOM FOREST CONFUSION MATRIX
+------------------------------
+True Negatives (TN): 3820
+False Positives (FP): 849
+False Negatives (FN): 530
+True Positives (TP): 801
+
+MODEL EVALUATION VISUALIZATIONS
+-------------------------------
+1. confusion_matrix.png - Confusion Matrix
+2. roc_curve.png - ROC Curve
+3. feature_importance.png - Top 10 Important Features
+
 Note: Class 1 represents clients who default on their payments.
 These are previously recorded experimental results. Re-run the model
 to verify the results before using them as final results.
