@@ -71,6 +71,16 @@ These results are from the current experimental train-test split and may vary if
 
 ![Random Forest Feature Importance](feature_importance.png)
 
+## Feature Importance Analysis
+
+The Random Forest feature importance analysis identifies the most influential features used by the model to predict credit card payment defaults.
+
+- **PAY_0** is the most important feature, with an importance score of approximately 0.256.
+- **PAY_2, PAY_4, and PAY_3** are also among the most important features.
+- **LIMIT_BAL** (credit limit) and payment amount features also contribute to the model's predictions.
+
+These results suggest that recent and historical payment status information plays an important role in predicting payment defaults. Feature importance indicates relative model contribution and does not establish causation.
+
 ## Project Status
 Ongoing — model evaluation and improvement are in progress.
 
