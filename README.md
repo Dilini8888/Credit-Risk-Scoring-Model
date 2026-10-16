@@ -40,22 +40,32 @@ The dataset file is not included in this repository.
 
 **Note:** Class 1 represents clients who default on their payments. Accuracy alone is not sufficient for evaluating credit risk models, so Recall, F1-score, and ROC-AUC are also considered.
 ## Current Best Model
-**Random Forest Classifier**
+
+**Tuned Random Forest**
 
 - Accuracy: 77.02%
 - Class 1 Recall: 60.18%
 - Class 1 F1-score: 53.74%
 - ROC-AUC: 0.77335
 
-These results are from the current experimental train-test split and may vary if the data split or model settings change.
+The Tuned Random Forest achieved the highest Class 1 F1-score and ROC-AUC among the evaluated models. It is the preferred candidate for identifying potential payment defaults, although further evaluation is required.
+
+These are previously recorded experimental results and must be verified by rerunning the model before being treated as final results. from the current experimental train-test split and may vary if the data split or model settings change.
 
 ## How to Run
+
 1. Install Python.
-2. Install the required libraries:
-   `pip install pandas scikit-learn xlrd`
+2. Clone or download this repository.
 3. Place the dataset file named `default of credit card clients.xls` in the project folder.
-4. Run:
+4. Install the required libraries:
+
+   `pip install -r requirements.txt`
+
+5. Run the Python script:
+
    `python credit_risk_model.py`
+
+**Note:** The dataset is not included in this repository. Ensure that the dataset filename matches the filename expected by the Python script.
 
 ## Model Evaluation Visualizations
 
@@ -91,6 +101,10 @@ The Random Forest feature importance analysis identifies the most influential fe
 - **LIMIT_BAL** (credit limit) and payment amount features also contribute to the model's predictions.
 
 These results suggest that recent and historical payment status information plays an important role in predicting payment defaults. Feature importance indicates relative model contribution and does not establish causation.
+
+## Results Verification
+
+The performance metrics and confusion matrix shown in this README are previously recorded experimental results. They should be verified by rerunning the model and evaluation scripts before being considered final. Results may vary depending on the data split, preprocessing steps, and model configuration.
 
 ## Project Status
 Ongoing — model evaluation and improvement are in progress.
