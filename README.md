@@ -63,6 +63,17 @@ These results are from the current experimental train-test split and may vary if
 
 ![Random Forest Confusion Matrix](confusion_matrix.png)
 
+**Confusion Matrix Results**
+
+| Metric | Value |
+|---|---:|
+| True Negatives (TN) | 3,820 |
+| False Positives (FP) | 849 |
+| False Negatives (FN) | 530 |
+| True Positives (TP) | 801 |
+
+The confusion matrix summarizes the model's correct and incorrect predictions for both classes on the test dataset.
+
 ### 2. Random Forest ROC Curve
 
 ![Random Forest ROC Curve](roc_curve.png)
